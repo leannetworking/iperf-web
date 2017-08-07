@@ -1,6 +1,7 @@
 FROM php:5.6.30-apache
 
-MAINTAINER "The Ignorant IT Guy" <iitg@gmail.com>
+MAINTAINER "LeanNet" <info@leannet.eu>
+# Forked from iitgdocker/iperf-web by The Ignorant IT Guy"
 
 # Install python and python docker API so we can spawn iperf
 # docker containers from inside our iperf-web container.
@@ -10,6 +11,7 @@ RUN apt-get update && apt-get install -y sudo \
                                          python \
                                          python-pip \
                                          traceroute \
+					 iperf \
     --no-install-recommends && rm -r /var/lib/apt/lists/*
 
 # Installs the latest version of the docker python API
